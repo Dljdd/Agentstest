@@ -8,7 +8,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-os.environ["GROQ_API_KEY"] = "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"
+os.environ["GROQ_API_KEY"] = ""
 
 # youtube_video_search_tool = YoutubeChannelSearchTool(youtube_channel_handle='@atrioc')
 
