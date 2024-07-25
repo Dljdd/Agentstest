@@ -3,16 +3,16 @@
 import os
 from crewai import Agent, Task, Crew
 from langchain_groq import ChatGroq
-# from crewai_tools import YoutubeChannelSearchTool
+from crewai_tools import YoutubeVideoSearchTool
 import warnings
 warnings.filterwarnings('ignore')
 
 
 os.environ["GROQ_API_KEY"] = ""
 
-# youtube_video_search_tool = YoutubeChannelSearchTool(youtube_channel_handle='@atrioc')
+youtube_video_search_tool = YoutubeVideoSearchTool(youtube_video_url='https://www.youtube.com/watch?v=MEZ3sKdaRXI&t=828s')
 
-topic = 'ML vs DL vs Data Science'
+topic = 'Amazon vs Temu'
 
 Summarizer_Agent = Agent(
         role='Summarizer_Agent',
@@ -28,14 +28,14 @@ Summarizer_Agent = Agent(
         "engaging narratives that captivate and educate, bringing new"
         "discoveries to light in an accessible manner."
     ),
-        # tools=[youtube_video_search_tool],
+        tools=[youtube_video_search_tool],
         llm=ChatGroq(temperature=0.2, model_name="llama3-8b-8192")
     )
 
 task_summarize_vid = Task(
         description=f"""Write an article on the provided topic {topic} make sure it is at least 400 words and is understandable and makes sense
             """,
-        # tools=[youtube_video_search_tool],
+        tools=[youtube_video_search_tool],
         agent=Summarizer_Agent,
         output_file='new-blog-post.md'
         )
