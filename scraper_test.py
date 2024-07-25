@@ -2,12 +2,20 @@
 import os
 from crewai import Agent, Task, Crew
 from langchain_groq import ChatGroq
-# from crewai_tools import YoutubeChannelSearchTool
+from crewai_tools import SeleniumScrapingTool
 import warnings
 warnings.filterwarnings('ignore')
 
 
 os.environ["GROQ_API_KEY"] = ""
+
+
+
+# Example 1: Initialize the tool without any parameters to scrape the current page it navigates to
+
+# Example 3: Target and scrape a specific CSS element from a webpage
+tool = SeleniumScrapingTool(website_url='https://example.com', css_element='.main-content')
+
 
 # youtube_video_search_tool = YoutubeChannelSearchTool(youtube_channel_handle='@atrioc')
 
