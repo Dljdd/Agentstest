@@ -11,10 +11,10 @@ groq_api_key = os.getenv('GROQ_API_KEY')
 chat_llm = ChatOpenAI(
     openai_api_base="https://api.groq.com/openai/v1",
     openai_api_key=groq_api_key,
-    model="llama3-70b-8192",
+    model="llama-3.1-70b-versatile",
     temperature=0,
     max_tokens=1000,
 )
 
-llm = Groq(model="llama3-70b-8192", api_key=groq_api_key)
+llm = Groq(model="llama-3.1-70b-versatile", api_key=groq_api_key)
 
