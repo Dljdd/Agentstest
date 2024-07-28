@@ -1,18 +1,25 @@
-# import streamlit as st
 # import pandas as pd
 import os
 from crewai import Agent, Task, Crew
 from langchain_groq import ChatGroq
-from crewai_tools import YoutubeVideoSearchTool
+from crewai_tools import SeleniumScrapingTool
 import warnings
 warnings.filterwarnings('ignore')
 
 
-os.environ["GROQ_API_KEY"] = ""
+os.environ["GROQ_API_KEY"] = os.getenv('GROQ_API_KEY')
 
-youtube_video_search_tool = YoutubeVideoSearchTool(youtube_video_url='https://www.youtube.com/watch?v=MEZ3sKdaRXI&t=828s')
 
-topic = 'Amazon vs Temu'
+
+# Example 1: Initialize the tool without any parameters to scrape the current page it navigates to
+
+# Example 3: Target and scrape a specific CSS element from a webpage
+tool = SeleniumScrapingTool(website_url='https://example.com', css_element='.main-content')
+
+
+# youtube_video_search_tool = YoutubeChannelSearchTool(youtube_channel_handle='@atrioc')
+
+topic = 'ML vs DL vs Data Science'
 
 Summarizer_Agent = Agent(
         role='Summarizer_Agent',
@@ -28,14 +35,14 @@ Summarizer_Agent = Agent(
         "engaging narratives that captivate and educate, bringing new"
         "discoveries to light in an accessible manner."
     ),
-        tools=[youtube_video_search_tool],
+        # tools=[youtube_video_search_tool],
         llm=ChatGroq(temperature=0.2, model_name="llama3-8b-8192")
     )
 
 task_summarize_vid = Task(
         description=f"""Write an article on the provided topic {topic} make sure it is at least 400 words and is understandable and makes sense
             """,
-        tools=[youtube_video_search_tool],
+        # tools=[youtube_video_search_tool],
         agent=Summarizer_Agent,
         output_file='new-blog-post.md'
         )
