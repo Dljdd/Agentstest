@@ -9,12 +9,12 @@ load_dotenv()
 
 
 
-topic = "Analysis of latest Speech to text models like whisper and sarvam AI"
+topic = "How Sarvam AI is tackling Speech to text and text to speech for indic languages their website for reference: https://www.sarvam.ai/"
 
 
 task1 = Task(
     description=f"""Conduct comprehensive research on the assigned blog topic: {topic}, gathering accurate and relevant information from reliable sources across the internet, including articles, studies, and expert opinions.""",
-    expected_output="A detailed research brief summarizing key findings and relevant data points.",
+    expected_output="A detailed research brief summarizing key findings and relevant data points containing facts and figures which can be utilised.",
     agent=research_specialist,
 )
 
