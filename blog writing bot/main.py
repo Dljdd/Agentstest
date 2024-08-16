@@ -9,7 +9,7 @@ load_dotenv()
 
 
 
-topic = "How Sarvam AI is tackling Speech to text and text to speech for indic languages their website for reference: https://www.sarvam.ai/"
+topic = "How Sarvam AI is tackling Speech to text and text to speech for indic languages "
 
 
 task1 = Task(
