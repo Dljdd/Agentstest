@@ -9,7 +9,7 @@ load_dotenv()
 
 
 
-topic = "How Sarvam AI is tackling Speech to text and text to speech for indic languages "
+topic = "How Flux is changing the image generation landscape, show comparisons with other models where flux performs better"
 
 
 task1 = Task(
