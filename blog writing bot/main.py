@@ -9,7 +9,7 @@ load_dotenv()
 
 
 
-topic = "How Flux is changing the image generation landscape, show comparisons with other models where flux performs better"
+topic = "How can we apply Graph Neural Networks for tasks"
 
 
 task1 = Task(
