@@ -3,13 +3,14 @@ from dotenv import load_dotenv
 from crewai import Agent, Task, Crew, Process
 
 # from tools import query_tool
+from tools import PDFParsingTool, TextStructuringTool, ContentSelectionTool, ConceptExtractionTool, QuestionCreationTool, AnswerExtractionTool
 
-from tools.pdf_parsing_tool import PDFParsingTool
-from tools.text_structuring_tool import TextStructuringTool
-from tools.content_selection_tool import ContentSelectionTool
-from tools.concept_extraction_tool import ConceptExtractionTool
-from tools.question_creation_tool import QuestionCreationTool
-from tools.answer_extraction_tool import AnswerExtractionTool
+# from tools.pdf_parsing_tool import PDFParsingTool
+# from tools.text_structuring_tool import TextStructuringTool
+# from tools.content_selection_tool import ContentSelectionTool
+# from tools.concept_extraction_tool import ConceptExtractionTool
+# from tools.question_creation_tool import QuestionCreationTool
+# from tools.answer_extraction_tool import AnswerExtractionTool
 
 # Import the chat LLM and other dependencies
 from agents import chat_llm

@@ -12,6 +12,8 @@ from tools.concept_extraction_tool import ConceptExtractionTool
 from tools.question_creation_tool import QuestionCreationTool
 from tools.answer_extraction_tool import AnswerExtractionTool
 
+from rag_embed import embed_model
+
 load_dotenv()
 # Define your API key here
 groq_api_key = os.getenv('GROQ_API_KEY')
@@ -30,7 +32,7 @@ pdf_parsing_tool = PDFParsingTool(file_path="flashcard/data/probability and stat
 text_structuring_tool = TextStructuringTool()
 # Assume `structured_content` comes from the text structuring tool
 content_selection_tool = ContentSelectionTool(structured_content={})
-concept_extraction_tool = ConceptExtractionTool(embed_model=your_embed_model)
+concept_extraction_tool = ConceptExtractionTool(embed_model=embed_model)
 question_creation_tool = QuestionCreationTool(llm=your_llm)
 answer_extraction_tool = AnswerExtractionTool(query_engine=your_query_engine)
 

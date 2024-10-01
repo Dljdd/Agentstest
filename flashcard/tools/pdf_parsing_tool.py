@@ -1,8 +1,8 @@
 import pdfplumber
 from crewai_tools import LlamaIndexTool
 
-class PDFParsingTool(LlamaIndexTool):
-    def __init__(self, file_path):
+class PDFParsingTool:
+    def __init__(self, file_path: str):
         self.file_path = file_path
     
     def parse_pdf(self):

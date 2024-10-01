@@ -1,9 +1,9 @@
 from crewai_tools import LlamaIndexTool
 from rag_embed import embed_model
 
-
 class ConceptExtractionTool(LlamaIndexTool):
     def __init__(self, embed_model):
+        super().__init__()  # Call the parent class's initializer if it has one
         self.embed_model = embed_model
     
     def extract_concepts(self, chapter_content):
